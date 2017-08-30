@@ -1,5 +1,4 @@
-import edu.princeton.cs.algs4.StdRandom;
-import edu.princeton.cs.algs4.StdStats;
+
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 /**
@@ -23,6 +22,7 @@ public class Percolation {
             throw new IllegalArgumentException();
         }
         this.size = n;
+        this.operator = new WeightedQuickUnionUF(size * size + 2);
         this.field = new boolean[n][n];
         this.intfield = new int[n][n];
         this.openCount = 0;
