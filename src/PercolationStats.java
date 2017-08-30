@@ -5,7 +5,7 @@ import edu.princeton.cs.algs4.StdStats;
  */
 public class PercolationStats {
 
-    private double[] opens;
+    private final double[] opens;
 
     public PercolationStats(int N, int T) {
         if (N <= 0 || T <= 0) {
@@ -31,24 +31,47 @@ public class PercolationStats {
         }
         System.out.println("mean                    = " + mean());
         System.out.println("stddev                  = " + stddev());
-        double low = mean() - stddev();
-        double high = mean() + stddev();
-        System.out.println("95% confidence interval = " + low + ", " + high);
+        System.out.println("95% confidence interval = " + confidenceLo() + ", " + confidenceHi());
     }
 
-    private double mean() {
+    public double mean() {
         return StdStats.mean(opens);
     }
     // sample standard deviation of percolation threshold
-    private double stddev() {
+    public double stddev() {
         return StdStats.stddev(opens);
     }
 
-    public static void main(String[] args) {
+    public double confidenceLo() {
+        return mean() - stddev();
+    }                  // low  endpoint of 95% confidence interval
+    public double confidenceHi() {
+        return mean() + stddev();
+    }
+
+ /*   public static void main(String[] args) {
         // test client, described below
         int N = Integer.parseInt(args[0]);
         int T = Integer.parseInt(args[1]);
         new PercolationStats(N, T);
+    }*/
+
+    public static void main(String args[]) {
+     /*   3
+        1 3
+        2 3
+        3 3
+        3 1
+        2 1
+        1 1*/
+        Percolation p = new Percolation(3);
+        p.open(1,3);
+        System.out.println(p.isFull(1,3));
+        p.open(2,3);
+        System.out.println(p.isFull(2,3));
+        p.open(3,3);
+        System.out.println(p.isFull(3,3));
+        p.open(3,1);
     }
 
 }
