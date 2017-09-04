@@ -63,10 +63,11 @@ public class Deque<Item> implements Iterable<Item> {
             last.forward = null;
             last.backward = null;
         } else {
-            Node<Item> oldLast = last;
-            last.item = item;
-            last.backward = null;
-            last.forward = oldLast;
+           Node<Item> newLast = new Node<>();
+           newLast.forward = last;
+           last.backward = newLast;
+           newLast.item = item;
+           last = newLast;
         }
 
         if (first == null) {
@@ -91,7 +92,7 @@ public class Deque<Item> implements Iterable<Item> {
 
         @Override
         public boolean hasNext() {
-            return isEmpty();
+            return current != null;
         }
 
         @Override

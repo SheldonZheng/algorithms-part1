@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 /**
  * Created by Baiye on 04/09/2017.
  */
@@ -10,9 +12,15 @@ public class DequeTest {
         deque.addFirst(4);
         deque.addFirst(5);
 
-        deque.iterator().forEachRemaining((i) ->{
-            System.out.println(i);
-        });
+        deque.addLast(6);
+        deque.addLast(7);
+        deque.addLast(8);
+
+
+        deque.iterator().forEachRemaining(System.out::print);
+      /*  while (deque.iterator().hasNext()) {
+            System.out.println(deque.iterator().next());
+        }*/
 
     }
 }
