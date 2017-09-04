@@ -1,3 +1,5 @@
+package week1;
+
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
@@ -51,7 +53,7 @@ public class PercolationStats {
         // test client, described below
         int N = Integer.parseInt(args[0]);
         int T = Integer.parseInt(args[1]);
-        new PercolationStats(N, T);
+        new week1.PercolationStats(N, T);
     }*/
 
     public static void main(String args[]) {
@@ -84,21 +86,21 @@ public class PercolationStats {
         StdOut.printf("stddev                  = %f\n", p.stddev());
         StdOut.println("95% confidence interval = " + p.confidenceLo() + ", " + p.confidenceHi());
 
-        //Percolation p = new Percolation(3);
-        //PercolationVisualizer.draw(p, 3);
+        //week1.Percolation p = new week1.Percolation(3);
+        //week1.PercolationVisualizer.draw(p, 3);
         // StdDraw.show(0);          // turn on animation mode
 
         //p.open(1,3);
         //p.open(2,3);
         //p.open(3,3);
         // p.open(3,1);
-        //PercolationVisualizer.draw(p,3);
+        //week1.PercolationVisualizer.draw(p,3);
         // StdDraw.show(100);        // pause for 100 miliseconds
 
         //   System.out.println( p.isFull(3,1));
 
      /*   List<String> strs = readTxtFileIntoStringArrList("/Users/zhenghang/Downloads/percolation/input20.txt");
-        Percolation p = new Percolation(Integer.valueOf(strs.get(0)));
+        week1.Percolation p = new week1.Percolation(Integer.valueOf(strs.get(0)));
         for (int i = 1; i < strs.size(); i++) {
             String[] strL = strs.get(i).split(" ");
             System.out.println(i);
