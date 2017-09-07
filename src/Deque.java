@@ -81,6 +81,38 @@ public class Deque<Item> implements Iterable<Item> {
         size++;
     }
 
+    public Item removeFirst() {
+        if (isEmpty()) {
+            throw new java.util.NoSuchElementException("Cannot remove element from an empty Deque.");
+        }
+        Item item = first.item;
+        if (size == 1) {
+            first = null;
+            last = null;
+        } else {
+            first = first.backward;
+            first.forward = null;
+        }
+        size--;
+        return item;
+    }
+
+    public Item removeLast() {
+        if (isEmpty()) {
+            throw new java.util.NoSuchElementException("Cannot remove element from an empty Deque.");
+        }
+        Item item = last.item;
+        if (size == 1) {
+            first = null;
+            last = null;
+        } else {
+            last = last.forward;
+            last.backward = null;
+        }
+        size--;
+        return item;
+    }
+
     @Override
     public Iterator<Item> iterator() {
         return new DequeIterator();

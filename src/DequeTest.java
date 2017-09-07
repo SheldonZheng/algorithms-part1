@@ -17,7 +17,7 @@ public class DequeTest {
         deque.addLast(8);
 
 
-        deque.iterator().forEachRemaining(System.out::print);
+        deque.iterator().forEachRemaining(System.out::println);
       /*  while (deque.iterator().hasNext()) {
             System.out.println(deque.iterator().next());
         }*/
