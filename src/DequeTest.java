@@ -1,3 +1,6 @@
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdRandom;
+
 import java.util.Iterator;
 
 /**
@@ -5,7 +8,23 @@ import java.util.Iterator;
  */
 public class DequeTest {
     public static void main(String args[]) {
-        Deque<Integer> deque = new Deque<Integer>();
+        RandomizedQueue<Integer> randomizedQueue = new RandomizedQueue<>();
+        int operate = StdRandom.uniform(2);
+        for (int i = 0;i < 100000;i++) {
+            int num = StdRandom.uniform(100);
+            if (operate == 1) {
+                randomizedQueue.enqueue(num);
+            } else {
+                if (randomizedQueue.isEmpty()) {
+                    continue;
+                }
+                randomizedQueue.dequeue();
+            }
+        }
+
+
+
+     /*   Deque<Integer> deque = new Deque<Integer>();
         deque.addFirst(1);
         deque.addFirst(2);
         deque.addFirst(3);
@@ -17,7 +36,7 @@ public class DequeTest {
         deque.addLast(8);
 
 
-        deque.iterator().forEachRemaining(System.out::println);
+        deque.iterator().forEachRemaining(System.out::println);*/
       /*  while (deque.iterator().hasNext()) {
             System.out.println(deque.iterator().next());
         }*/
