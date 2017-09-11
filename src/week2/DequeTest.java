@@ -1,7 +1,6 @@
-import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.StdRandom;
+package week2;
 
-import java.util.Iterator;
+import edu.princeton.cs.algs4.StdRandom;
 
 /**
  * Created by Baiye on 04/09/2017.
@@ -24,7 +23,7 @@ public class DequeTest {
 
 
 
-     /*   Deque<Integer> deque = new Deque<Integer>();
+     /*   week2.Deque<Integer> deque = new week2.Deque<Integer>();
         deque.addFirst(1);
         deque.addFirst(2);
         deque.addFirst(3);

@@ -1,3 +1,5 @@
+package week2;
+
 import java.util.Iterator;
 
 /**
@@ -89,7 +91,7 @@ public class Deque<Item> implements Iterable<Item> {
 
     public Item removeFirst() {
         if (isEmpty()) {
-            throw new java.util.NoSuchElementException("Cannot remove element from an empty Deque.");
+            throw new java.util.NoSuchElementException("Cannot remove element from an empty week2.Deque.");
         }
         Item item = first.item;
         if (size == 1) {
@@ -105,7 +107,7 @@ public class Deque<Item> implements Iterable<Item> {
 
     public Item removeLast() {
         if (isEmpty()) {
-            throw new java.util.NoSuchElementException("Cannot remove element from an empty Deque.");
+            throw new java.util.NoSuchElementException("Cannot remove element from an empty week2.Deque.");
         }
         Item item = last.item;
         if (size == 1) {

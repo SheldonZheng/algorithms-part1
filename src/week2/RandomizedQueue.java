@@ -1,3 +1,5 @@
+package week2;
+
 import edu.princeton.cs.algs4.StdRandom;
 
 import java.util.Iterator;
@@ -72,7 +74,7 @@ public class RandomizedQueue<Item> implements Iterable<Item>{
 
     public Item dequeue() {
         if (isEmpty()) {
-            throw new java.util.NoSuchElementException("Cannot dequeue from an empty RandomizedQueue");
+            throw new java.util.NoSuchElementException("Cannot dequeue from an empty week2.RandomizedQueue");
         }
         int randIndex = StdRandom.uniform(size);
         Item item = items[randIndex];
@@ -92,7 +94,7 @@ public class RandomizedQueue<Item> implements Iterable<Item>{
 
     public Item sample() {
         if(isEmpty())
-            throw new java.util.NoSuchElementException("Cannot sample an empty RandomizedQueue");
+            throw new java.util.NoSuchElementException("Cannot sample an empty week2.RandomizedQueue");
         return items[StdRandom.uniform(size)];
     }
 
