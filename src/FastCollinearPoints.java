@@ -1,23 +1,23 @@
 /**
  * Created by Baiye on 15/09/2017.
  */
-public class BruteCollinearPoints {
+public class FastCollinearPoints {
 
     private int nums;
 
     private LineSegment[] segments;
 
-    public BruteCollinearPoints(Point[] points) {
+    public FastCollinearPoints(Point[] points) {
         if (points == null)
             throw new java.lang.IllegalArgumentException();
         for (Point point : points) {
             if (point == null)
                 throw new java.lang.IllegalArgumentException();
         }
-        for (int i = 0; i < points.length + 1; i++) {
-            for (int i1 = i + 1; i1 < points.length; i1++) {
+        for (int i = 0; i < points.length; i++) {
+            for (int i1 = 0; i1 < points.length; i1++) {
                 if (points[i].compareTo(points[i1]) == 0)
-                    throw new IllegalArgumentException("Duplicated entries in given points.");
+                    throw new java.lang.IllegalArgumentException();
             }
         }
 

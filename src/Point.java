@@ -66,7 +66,7 @@ public class Point implements Comparable<Point> {
         if (that.x == this.x)
             return Double.POSITIVE_INFINITY;
 
-        return (that.y - this.y) / (that.x - this.x);
+        return (that.y - this.y) / (double) (that.x - this.x);
 
     }
 
@@ -130,6 +130,10 @@ public class Point implements Comparable<Point> {
      * Unit tests the Point data type.
      */
     public static void main(String[] args) {
+        Point p = new Point(366,48);
+        Point q = new Point(337,40);
+        System.out.println(p.slopeTo(q));
+        System.out.println(q.slopeTo(p));
         /* YOUR CODE HERE */
     }
 }
