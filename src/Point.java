@@ -103,13 +103,14 @@ public class Point implements Comparable<Point> {
 
     private class Ordering implements Comparator<Point> {
         public int compare(Point q1, Point q2) {
-            Point p = new Point(x, y);
-            double d = p.slopeTo(q1) - p.slopeTo(q2);
-            if (d > 0)
-                return -1;
-            if (d < 0)
+            double slopeDiff = slopeTo(q1) - slopeTo(q2);
+            if (slopeDiff > 0) {
                 return 1;
-            return 0;
+            } else if (slopeDiff < 0) {
+                return -1;
+            } else {
+                return 0;
+            }
         }
     }
 
